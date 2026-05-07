@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+      - name: Set up Python
+        run: uv python install 3.12
+      - name: Install dependencies
+        run: uv sync --dev
+      - name: Lint
+        run: uv run ruff check .
+      - name: Test
+        run: uv run pytest -v
+      - name: Build Python package
+        run: uv build
+      - name: Pack MCPB bundle
+        run: npx --yes @anthropic-ai/mcpb pack

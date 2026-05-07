@@ -1,0 +1,17 @@
+{
+  "$schema": "https://gofastmcp.com/public/schemas/fastmcp.json/v1.json",
+  "source": {
+    "type": "filesystem",
+    "path": "src/arc_browser_mcp/server.py",
+    "entrypoint": "mcp"
+  },
+  "environment": {
+    "type": "uv",
+    "python": ">=3.12",
+    "dependencies": ["fastmcp>=3.2,<4"]
+  },
+  "deployment": {
+    "transport": "stdio",
+    "log_level": "INFO"
+  }
+}

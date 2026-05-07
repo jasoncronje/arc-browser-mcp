@@ -1,0 +1,14 @@
+.git/
+.github/
+.codex/
+.pytest_cache/
+.ruff_cache/
+.venv/
+__pycache__/
+build/
+dist/
+*.egg-info/
+docs/superpowers/
+tests/
+uv.lock
+*.mcpb

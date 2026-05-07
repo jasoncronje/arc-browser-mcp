@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "arc-browser-mcp"
+version = "0.1.0"
+description = "Local MCP server for controlling Arc Browser Spaces and tabs on macOS."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [
+  { name = "Jason Cronje" }
+]
+dependencies = [
+  "fastmcp>=3.2,<4"
+]
+keywords = ["arc", "browser", "mcp", "tabs", "spaces", "automation"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: MacOS X",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet :: WWW/HTTP :: Browsers"
+]
+
+[project.urls]
+Homepage = "https://github.com/jasoncronje/arc-browser-mcp"
+Repository = "https://github.com/jasoncronje/arc-browser-mcp"
+Issues = "https://github.com/jasoncronje/arc-browser-mcp/issues"
+Documentation = "https://github.com/jasoncronje/arc-browser-mcp#readme"
+
+[project.scripts]
+arc-browser-mcp = "arc_browser_mcp.cli:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.4",
+  "ruff>=0.14"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

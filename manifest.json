@@ -1,0 +1,86 @@
+{
+  "manifest_version": "0.4",
+  "name": "arc-browser-mcp",
+  "display_name": "Arc Browser MCP",
+  "version": "0.1.0",
+  "description": "Local MCP server for inspecting and controlling Arc Browser Spaces and tabs on macOS.",
+  "long_description": "Inspect Arc Spaces, tabs, folders, and history from local state, then perform explicit Arc actions such as creating, selecting, reloading, and closing tabs.",
+  "author": { "name": "Jason Cronje" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasoncronje/arc-browser-mcp.git"
+  },
+  "homepage": "https://github.com/jasoncronje/arc-browser-mcp",
+  "documentation": "https://github.com/jasoncronje/arc-browser-mcp#readme",
+  "support": "https://github.com/jasoncronje/arc-browser-mcp/issues",
+  "license": "MIT",
+  "server": {
+    "type": "uv",
+    "entry_point": "src/arc_browser_mcp/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run", "--directory", "${__dirname}", "arc-browser-mcp"],
+      "env": {}
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin"],
+    "runtimes": { "python": ">=3.12" }
+  },
+  "tools": [
+    {
+      "name": "arc_get_overview",
+      "description": "Get compact Arc inventory, counts, source health, and Space metadata."
+    },
+    {
+      "name": "arc_query_tabs",
+      "description": "List, filter, and search Arc tabs using the fast local Arc index."
+    },
+    {
+      "name": "arc_get_tab",
+      "description": "Get a full normalized Arc tab record by explicit tab ID."
+    },
+    {
+      "name": "arc_get_sidebar_tree",
+      "description": "Get Arc Space, pinned, unpinned, and folder hierarchy."
+    },
+    {
+      "name": "arc_search_history",
+      "description": "Search Arc Chromium history snapshots across local profiles."
+    },
+    {
+      "name": "arc_analyze_tabs",
+      "description": "Analyze Arc tabs for duplicates, stale tabs, junk candidates, and missing URLs."
+    },
+    {
+      "name": "arc_create_tab",
+      "description": "Create a new Arc tab in an explicit Space and return its verified tab ID."
+    },
+    {
+      "name": "arc_focus_space",
+      "description": "Focus an Arc Space by explicit Space ID."
+    },
+    {
+      "name": "arc_select_tab",
+      "description": "Select an Arc tab by explicit tab ID."
+    },
+    {
+      "name": "arc_open_url",
+      "description": "Navigate a specific Arc tab, or the active tab when explicitly omitted."
+    },
+    {
+      "name": "arc_reload_tabs",
+      "description": "Reload one or more Arc tabs by explicit tab IDs."
+    },
+    {
+      "name": "arc_close_tabs",
+      "description": "Close one or more Arc tabs by explicit tab IDs."
+    },
+    {
+      "name": "arc_execute_javascript",
+      "description": "Execute JavaScript in an explicit Arc tab when enabled by environment variable."
+    }
+  ],
+  "keywords": ["arc", "browser", "tabs", "spaces", "mcp", "automation"],
+  "tools_generated": false
+}
