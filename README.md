@@ -273,6 +273,10 @@ uvx arc-browser-mcp install --client claude-desktop
 - The server does not directly edit Arc sidebar, archive, command ranking, or
   history files. Changes go through Arc automation instead.
 
+## Reference
+
+Less common setup, debugging, and development details live here.
+
 <details>
 <summary>CLI reference</summary>
 
