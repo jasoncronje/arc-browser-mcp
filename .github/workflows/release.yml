@@ -9,6 +9,9 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build:
     name: Build release artifacts
@@ -66,7 +69,8 @@ jobs:
         with:
           name: release-artifacts
           path: |
-            dist/*
+            dist/*.tar.gz
+            dist/*.whl
             *.mcpb
           if-no-files-found: error
 
@@ -75,7 +79,8 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/*
+            dist/*.tar.gz
+            dist/*.whl
             *.mcpb
 
   publish-pypi:
