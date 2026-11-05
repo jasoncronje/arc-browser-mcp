@@ -1,5 +1,13 @@
 # Arc Browser MCP
 
+> [!WARNING]
+> **This project is archived and no longer maintained.**
+> The Browser Company is ending Arc on **December 22, 2026**. After that date
+> Arc stops working on macOS and Windows and Arc accounts are deactivated
+> ([announcement coverage](https://techcrunch.com/2026/10/22/arc-browser-sunsets-december-22-as-the-browser-company-doubles-down-on-dia/)).
+> This server depends on Arc, so it will stop working then. The code stays
+> here for reference.
+
 Arc Browser MCP is a local stdio MCP server for inspecting and controlling
 [Arc Browser](https://arc.net/) Spaces and tabs on macOS.
 
